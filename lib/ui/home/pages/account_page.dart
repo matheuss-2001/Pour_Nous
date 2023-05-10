@@ -3,8 +3,8 @@ import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:pour_nous/ui/home/controller/home_controller.dart';
 
-class HomePage extends GetView<HomeController> {
-  const HomePage({Key? key}) : super(key: key);
+class AccountPage extends GetView<HomeController> {
+  const AccountPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +12,17 @@ class HomePage extends GetView<HomeController> {
 
     return Scaffold(
       body: _buildBody(context, size),
+
     );
   }
 
+
+
   _buildBody(BuildContext context, Size size) {
     return GetBuilder<HomeController>(
-        id: "builderHomePage",
+        id: "builderAccountPage",
         builder: (controller) {
-          if (controller.isLoadingHomeData) {
+          if (controller.isLoadingAccountData) {
             return Container();
             //shimmer
             /*
@@ -34,11 +37,11 @@ class HomePage extends GetView<HomeController> {
                */
           }
 
-          return Container(
-            color: Colors.grey,
-            width: 40,
-            height: 40,
-          );
+
+          return Container(color: Colors.green,width: 40,height: 40,);
         });
   }
+
+
+
 }
