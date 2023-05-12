@@ -11,12 +11,10 @@ class AccountPage extends GetView<HomeController> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Colors.green,
       body: _buildBody(context, size),
-
     );
   }
-
-
 
   _buildBody(BuildContext context, Size size) {
     return GetBuilder<HomeController>(
@@ -37,11 +35,11 @@ class AccountPage extends GetView<HomeController> {
                */
           }
 
-
-          return Container(color: Colors.green,width: 40,height: 40,);
+          return Container(
+            color: Colors.transparent,
+            width: 40,
+            height: 40,
+          );
         });
   }
-
-
-
 }

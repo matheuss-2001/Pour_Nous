@@ -23,7 +23,13 @@ dev_dependencies:
 
 
 
+
+
 flutter:
 
     uses-material-design: true
+
+    assets:
+      - assets/logo/logo_pourNous.png
+      - assets/images/modelo_um.jpg
 

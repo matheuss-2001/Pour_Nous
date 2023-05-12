@@ -5,7 +5,7 @@ import 'package:pour_nous/app/helpers/responsive_margin.dart';
 import 'package:pour_nous/ui/home/controller/home_controller.dart';
 import 'package:pour_nous/ui/home/pages/account_page.dart';
 import 'package:pour_nous/ui/home/pages/home_page.dart';
-import 'package:pour_nous/ui/home/pages/product_page.dart';
+import 'package:pour_nous/ui/produtos/pages/product_page.dart';
 
 class CentralCommandPage extends GetView<HomeController> {
   const CentralCommandPage({Key? key}) : super(key: key);
@@ -23,9 +23,33 @@ class CentralCommandPage extends GetView<HomeController> {
 
   _buildAppBar() {
     return AppBar(
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 16),
+          child: IconButton(
+            icon: const Icon(
+              Icons.shopping_cart_checkout_outlined,
+              color: Colors.black87,
+              size: 25,
+            ),
+            onPressed: () {
+              //controller.launchWhatsapp('Olá,  preciso de suporte');
+            },
+            tooltip: 'Carrinho',
+          ),
+        ),
+      ],
+      leadingWidth: 220,
+      backgroundColor: Colors.white,
       title: const Text(
-        'Pour Nous',
+        '',
         //style: TextStyle(color: OneColors.accentDark),
+      ),
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 16.0),
+        child: Image.asset(
+          "assets/logo/logo_pourNous.png",
+        ),
       ),
     );
   }
@@ -50,14 +74,14 @@ class CentralCommandPage extends GetView<HomeController> {
           }
 
           return Container(
-            margin: responsiveMargin(size),
+            //margin: responsiveMargin(size),
             child: PageView(
               controller: controller.pageController,
               physics: const NeverScrollableScrollPhysics(),
               onPageChanged: (idx) {
                 controller.pageIdx = idx;
               },
-              children: const [ProductPage(), HomePage(), AccountPage()],
+              children: [ProductPage(), HomePage(), AccountPage()],
             ),
           );
         });
@@ -83,7 +107,7 @@ class CentralCommandPage extends GetView<HomeController> {
           }
 
           return BottomNavigationBar(
-              selectedItemColor: Colors.blue,
+              selectedItemColor: Colors.black87,
               unselectedItemColor: Colors.grey,
               currentIndex: controller.pageIdx,
               onTap: (index) {
@@ -107,10 +131,11 @@ class CentralCommandPage extends GetView<HomeController> {
               },
               items: const [
                 BottomNavigationBarItem(
-                    label: "Produtos", icon: Icon(Icons.label)),
-                BottomNavigationBarItem(label: "Home", icon: Icon(Icons.home)),
+                    label: "Produtos", icon: Icon(Icons.label_outline)),
                 BottomNavigationBarItem(
-                    label: "Conta", icon: Icon(Icons.person))
+                    label: "Home", icon: Icon(Icons.home_outlined)),
+                BottomNavigationBarItem(
+                    label: "Conta", icon: Icon(Icons.person_2_outlined))
               ]);
         });
   }

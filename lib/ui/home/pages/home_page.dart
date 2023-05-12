@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:pour_nous/app/helpers/global_variables.dart';
 import 'package:pour_nous/ui/home/controller/home_controller.dart';
 
 class HomePage extends GetView<HomeController> {
@@ -34,10 +35,20 @@ class HomePage extends GetView<HomeController> {
                */
           }
 
-          return Container(
-            color: Colors.grey,
-            width: 40,
-            height: 40,
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                Image.asset(
+                  "assets/images/modelo_um.jpg",
+                  fit: BoxFit.cover,
+                  height: size.height,
+                ),
+                OneSepators.medium,
+                Container(
+                  child: Text("OFERTA UM"),
+                ),
+              ],
+            ),
           );
         });
   }
