@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:pour_nous/ui/home/controller/central_command_repository.dart';
+import 'package:pour_nous/app/componentes/product_item.dart';
+import 'package:pour_nous/ui/home/controller/home_repository.dart';
 
 class HomeController extends GetxController {
 
 
-  final CentralCommandRepository  homeRepository;
+  final HomeRepository  homeRepository;
 
   HomeController(this.homeRepository);
 
@@ -18,6 +19,12 @@ class HomeController extends GetxController {
 
   //home
   bool isLoadingHomeData = false;
+  List<ProductItem> productItensHome = <ProductItem>[];
+
+  List<String> listPhotosModelos = <String>[];
+
+
+
 
   //product
   bool isLoadingProductData = false;
@@ -27,6 +34,47 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    listPhotosModelos.add("assets/images/modelo_um.jpg");
+    listPhotosModelos.add("assets/images/modelo_dois.jpeg");
+    listPhotosModelos.add("assets/images/modelo_tres.jpeg");
+
+    productItensHome.add(
+        ProductItem(
+            listOfPhotos: const [
+              "assets/images/mango_front.jpeg",
+               "assets/images/mango_back.jpeg"
+            ],
+            productDescription: "BLUE MANGO",
+            productValue: "R\$ 189,00",
+            onTapProduct: (){}
+            ),
+
+    );
+    productItensHome.add(
+      ProductItem(
+          listOfPhotos: const [
+            "assets/images/lichia_front.jpeg",
+            "assets/images/lichia_back.jpeg"
+          ],
+          productDescription: "LICHIA",
+          productValue: "R\$ 189,00",
+          onTapProduct: (){}
+      ),
+
+    );
+    productItensHome.add(
+      ProductItem(
+          listOfPhotos: const [
+            "assets/images/green_mango_front.jpeg",
+            "assets/images/green_mango_back.jpeg"
+          ],
+          productDescription: "GREEN MANGO",
+          productValue: "R\$ 189,00",
+          onTapProduct: (){}
+      ),
+
+    );
+
 
   }
 

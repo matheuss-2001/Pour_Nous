@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pour_nous/app/helpers/responsive_margin.dart';
 import 'package:pour_nous/ui/home/controller/home_controller.dart';
-import 'package:pour_nous/ui/home/pages/account_page.dart';
+import 'package:pour_nous/ui/conta/pages/account_page.dart';
 import 'package:pour_nous/ui/home/pages/home_page.dart';
 import 'package:pour_nous/ui/produtos/pages/product_page.dart';
 
@@ -74,14 +74,13 @@ class CentralCommandPage extends GetView<HomeController> {
           }
 
           return Container(
-            //margin: responsiveMargin(size),
             child: PageView(
               controller: controller.pageController,
               physics: const NeverScrollableScrollPhysics(),
               onPageChanged: (idx) {
                 controller.pageIdx = idx;
               },
-              children: [ProductPage(), HomePage(), AccountPage()],
+              children: const [ProductPage(), HomePage(), AccountPage()],
             ),
           );
         });

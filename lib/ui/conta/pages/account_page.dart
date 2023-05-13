@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:pour_nous/ui/conta/controller/conta_controller.dart';
 import 'package:pour_nous/ui/home/controller/home_controller.dart';
 
-class AccountPage extends GetView<HomeController> {
+class AccountPage extends GetView<ContaController> {
   const AccountPage({Key? key}) : super(key: key);
 
   @override

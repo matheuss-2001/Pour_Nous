@@ -2,7 +2,7 @@ import 'package:get/get_connect/connect.dart';
 
 
 
-class CentralCommandApi extends GetConnect {
+class ContaApi extends GetConnect {
   @override
   void onInit() {
     super.onInit();
