@@ -4,14 +4,9 @@ import 'package:pour_nous/app/componentes/product_item.dart';
 import 'package:pour_nous/ui/home/controller/home_repository.dart';
 
 class HomeController extends GetxController {
-
-
-  final HomeRepository  homeRepository;
+  final HomeRepository homeRepository;
 
   HomeController(this.homeRepository);
-
-
-
 
   //centralCommand
   PageController pageController = PageController();
@@ -23,14 +18,11 @@ class HomeController extends GetxController {
 
   List<String> listPhotosModelos = <String>[];
 
-
-
-
   //product
   bool isLoadingProductData = false;
 
   //account
- bool  isLoadingAccountData = false;
+  bool isLoadingAccountData = false;
   @override
   void onInit() {
     super.onInit();
@@ -39,16 +31,14 @@ class HomeController extends GetxController {
     listPhotosModelos.add("assets/images/modelo_tres.jpeg");
 
     productItensHome.add(
-        ProductItem(
-            listOfPhotos: const [
-              "assets/images/mango_front.jpeg",
-               "assets/images/mango_back.jpeg"
-            ],
-            productDescription: "BLUE MANGO",
-            productValue: "R\$ 189,00",
-            onTapProduct: (){}
-            ),
-
+      ProductItem(
+          listOfPhotos: const [
+            "assets/images/mango_front.jpeg",
+            "assets/images/mango_back.jpeg"
+          ],
+          productDescription: "BLUE MANGO",
+          productValue: "R\$ 189,00",
+          onTapProduct: () {}),
     );
     productItensHome.add(
       ProductItem(
@@ -58,9 +48,7 @@ class HomeController extends GetxController {
           ],
           productDescription: "LICHIA",
           productValue: "R\$ 189,00",
-          onTapProduct: (){}
-      ),
-
+          onTapProduct: () {}),
     );
     productItensHome.add(
       ProductItem(
@@ -70,12 +58,8 @@ class HomeController extends GetxController {
           ],
           productDescription: "GREEN MANGO",
           productValue: "R\$ 189,00",
-          onTapProduct: (){}
-      ),
-
+          onTapProduct: () {}),
     );
-
-
   }
 
   @override

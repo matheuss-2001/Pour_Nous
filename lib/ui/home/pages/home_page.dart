@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
@@ -39,6 +40,7 @@ class HomePage extends GetView<HomeController> {
           }
 
           return SingleChildScrollView(
+            padding: EdgeInsets.only(left: 16, right: 16),
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [
@@ -96,7 +98,7 @@ class HomePage extends GetView<HomeController> {
                                   const SliverGridDelegateWithMaxCrossAxisExtent(
                                       maxCrossAxisExtent: 200,
                                       childAspectRatio: 0.7,
-                                      crossAxisSpacing: 20,
+                                      crossAxisSpacing: kIsWeb ? 20 : 5,
                                       mainAxisSpacing: 20),
                               physics: BouncingScrollPhysics(),
                               itemCount: controller.productItensHome.length,

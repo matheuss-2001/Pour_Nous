@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pour_nous/app/helpers/responsive_margin.dart';
 import 'package:pour_nous/ui/home/controller/home_controller.dart';
 import 'package:pour_nous/ui/conta/pages/account_page.dart';
 import 'package:pour_nous/ui/home/pages/home_page.dart';
@@ -130,7 +129,7 @@ class CentralCommandPage extends GetView<HomeController> {
               },
               items: const [
                 BottomNavigationBarItem(
-                    label: "Produtos", icon: Icon(Icons.label_outline)),
+                    label: "Produtos", icon: Icon(Icons.card_travel)),
                 BottomNavigationBarItem(
                     label: "Home", icon: Icon(Icons.home_outlined)),
                 BottomNavigationBarItem(
